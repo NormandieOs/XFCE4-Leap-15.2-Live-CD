@@ -1,0 +1,290 @@
+<?xml version="1.0"?>
+<image schemaversion="6.5" name="XFCE4-Leap-15.2-Live-CD" displayname="XFCE4_Leap_15.2">
+  <description type="system">
+    <author>ierusalim</author>
+    <contact>ierusalim@opensuse.org</contact>
+    <specification>openSUSE Leap 15.2 Live system</specification>
+  </description>
+  <profiles>
+    <profile name="noEFI" description="noEFI for x86"/>
+    <profile name="EFI" description="no noEFI for x86_64"/>
+  </profiles>
+  <preferences profiles="EFI">
+    <type primary="true" bootprofile="default" editbootconfig="isopatch.sh" kernelcmdline="splash=silent quiet" flags="overlay" hybrid="true" hybridpersistent="true" hybridpersistent_filesystem="ext4" image="iso" firmware="uefi" volid="XFCE4_Leap_15.2" mediacheck="true"/>
+    <version>0.0.1</version>
+    <bootloader-theme>openSUSE</bootloader-theme>
+    <bootsplash-theme>bgrt</bootsplash-theme>
+    <packagemanager>zypper</packagemanager>
+    <rpm-check-signatures>false</rpm-check-signatures>
+    <locale>en_US</locale>
+    <rpm-excludedocs>false</rpm-excludedocs>
+  </preferences>
+  <preferences profiles="noEFI">
+    <type primary="true" bootprofile="default" editbootconfig="isopatch.sh" kernelcmdline="splash=silent quiet" flags="overlay" hybrid="true" hybridpersistent="true" hybridpersistent_filesystem="ext4" image="iso" firmware="bios" volid="XFCE4_Leap_15.2" mediacheck="true"/>
+    <version>0.0.1</version>
+    <bootloader-theme>openSUSE</bootloader-theme>
+    <bootsplash-theme>bgrt</bootsplash-theme>
+    <packagemanager>zypper</packagemanager>
+    <rpm-check-signatures>false</rpm-check-signatures>
+    <locale>en_US</locale>
+    <rpm-excludedocs>false</rpm-excludedocs>
+  </preferences>
+  <users>
+    <user groups="root" name="root" password="" home="/root"/>
+  </users>
+  <packages type="image" patternType="onlyRequired">
+    <package name="aaa_base"/>
+    <package name="dracut-kiwi-live"/>
+    <package name="e2fsprogs" bootinclude="true"/> <!-- workaround for bnc#892087 -->
+    <package name="gfxboot-branding-openSUSE" bootinclude="true" bootdelete="true"/>
+    <package name="grub2-branding-openSUSE" bootinclude="true"/>
+    <package name="kernel-default"/>
+    <package name="libxslt-tools"/> <!-- xsltproc needed by config.sh -->
+    <package name="live-langset-data"/>
+    <package name="live-net-installer"/>
+    <package name="memtest86+"/>
+    <package name="pam"/>
+    <package name="pam-config"/>
+    <package name="patch"/>
+    <package name="tar"/>
+    <package name="udev"/>
+    <package name="yast2-add-on"/>
+    <package name="yast2-ntp-client"/>
+    <package name="zypper"/>
+    <archive name="livecd-udev.tar.xz"/>
+    <archive name="geturls.tar.xz"/>
+    <archive name="packman-20200507-lp152.x86_64.tar.xz"/>
+    <archive name="repomd.xml.key.tar.xz"/>
+    <!-- firmware and drivers -->
+    <package name="adaptec-firmware"/>
+    <package name="atmel-firmware"/>
+    <package name="bluez-firmware"/>
+    <package name="ipw-firmware"/>
+    <package name="kernel-firmware"/>
+    <package name="mpt-firmware"/>
+    <package name="zd1211-firmware"/>
+    <package name="xf86-input-keyboard"/>
+    <package name="xf86-input-mouse"/>
+    <package name="xf86-input-vmmouse"/>
+    <package name="xf86-video-amdgpu"/>
+    <package name="xf86-video-ati"/>
+    <package name="xf86-video-fbdev"/>
+    <package name="xf86-video-mach64"/>
+    <package name="xf86-video-nouveau"/>
+    <package name="xf86-video-nv"/>
+    <package name="xf86-video-r128"/>
+    <package name="xf86-video-vesa"/>
+    <package name="b43-fwcutter"/>
+    <!-- WIFI and bluetooth -->
+    <package name="blueman"/>
+    <package name="blueman-lang"/>
+    <package name="crda"/>
+    <package name="iw"/>
+    <package name="wireless-tools"/>
+    <!-- XFCE -->
+    <package name="aaa_base-extras"/>
+    <package name="acl"/>
+    <package name="alsa"/>
+    <package name="alsa-plugins-pulse"/>
+    <package name="alsa-utils"/>
+    <package name="aria2"/>
+    <package name="bind-utils"/>
+    <package name="btrfsprogs"/>
+    <package name="ca-certificates-mozilla"/>
+    <package name="checkmedia"/>
+    <package name="command-not-found"/>
+    <package name="cpupower"/>
+    <package name="cron"/>
+    <package name="cryptsetup"/>
+    <package name="dmidecode"/>
+    <package name="dosfstools"/>
+    <package name="engrampa"/>
+    <package name="engrampa-lang"/>
+    <package name="exo-branding-openSUSE"/>
+    <package name="faenza-icon-theme-mint"/>
+    <!--package name="file-roller"/>
+    <package name="file-roller-lang"/-->
+    <package name="firewalld"/>
+    <package name="fonts-config"/>
+    <!--package name="galculator"/>
+    <package name="galculator-lang"/-->
+    <package name="gcolor3"/>
+    <package name="gdk-pixbuf-loader-rsvg"/>
+    <package name="gfxboot"/>
+    <package name="gio-branding-openSUSE"/>
+    <package name="glibc-locale"/>
+    <package name="google-droid-fonts"/>
+    <package name="gparted"/>
+    <package name="gparted-lang"/>
+    <package name="gptfdisk"/>
+    <package name="grsync"/>
+    <package name="grsync-lang"/>
+    <package name="grub2"/>
+    <package name="grub2-x86_64-efi" arch="x86_64"/>
+    <package name="gsynaptics"/>
+    <package name="gtk2-branding-openSUSE"/>
+    <package name="gtk2-metatheme-greybird"/>
+    <package name="gtk3-branding-openSUSE"/>
+    <package name="gtk3-metatheme-greybird"/>
+    <package name="gucharmap"/>
+    <package name="gucharmap-lang"/>
+    <package name="gvfs"/>
+    <package name="gvfs-backends"/>
+    <package name="hexchat"/>
+    <package name="hexchat-lang"/>
+    <package name="iproute2"/>
+    <package name="iputils"/>
+    <package name="jfsutils"/>
+    <package name="less"/>
+    <!--package name="libexo-1-0-branding-openSUSE"/-->
+    <package name="libgarcon-branding-openSUSE"/>
+    <package name="libgnomesu"/>
+    <package name="libyui-qt-pkg"/>
+    <package name="lightdm"/>
+    <package name="lightdm-gtk-greeter-branding-openSUSE"/>
+    <package name="lvm2"/>
+    <package name="man"/>
+    <package name="mate-calc"/>
+    <package name="mate-calc-lang"/>
+    <package name="mc"/>
+    <package name="mc-lang"/>
+    <package name="midori"/>
+    <package name="midori-lang"/>
+    <package name="mobile-broadband-provider-info"/>
+    <package name="mousepad"/>
+    <package name="mousepad-lang"/>
+    <package name="NetworkManager"/>
+    <package name="NetworkManager-connection-editor"/>
+    <package name="NetworkManager-gnome"/>
+    <package name="NetworkManager-openvpn-gnome"/>
+    <package name="ntfs-3g"/>
+    <package name="ntfsprogs"/>
+    <package name="open-iscsi"/>
+    <!--package name="package-lists-openSUSE-X11-cd"/-->
+    <package name="patterns-base-base"/>
+    <package name="patterns-base-enhanced_base"/>
+    <package name="patterns-base-minimal_base"/>
+    <package name="patterns-base-sw_management"/>
+    <package name="patterns-base-x11"/>
+    <package name="patterns-xfce-xfce_basis"/>
+    <package name="patterns-yast-yast2_basis"/>
+    <package name="pavucontrol"/>
+    <package name="pavucontrol-lang"/>
+    <package name="pcmciautils"/>
+    <package name="photorec"/>
+    <package name="pinentry-gnome3"/>
+    <package name="plymouth-branding-openSUSE"/>
+    <package name="plymouth-dracut"/>
+    <package name="polkit-default-privs"/>
+    <package name="polkit-gnome"/>
+    <package name="pptp"/>
+    <package name="psmisc"/>
+    <package name="pulseaudio-module-x11"/>
+    <package name="pulseaudio-utils"/>
+    <package name="quota"/>
+    <package name="reiserfs"/>
+    <package name="ristretto"/>
+    <package name="ristretto-lang"/>
+    <package name="rp-pppoe"/>
+    <package name="rpcbind"/>
+    <package name="sax3"/>
+    <package name="seahorse"/>
+    <package name="seahorse-lang"/>
+    <package name="shim" arch="x86_64"/>
+    <package name="smartmontools"/>
+    <package name="smbios-utils-python"/>
+    <package name="spice-vdagent"/>
+    <package name="sudo"/>
+    <package name="syslinux"/>
+    <package name="systemd-logger"/>
+    <package name="testdisk"/>
+    <package name="thunar"/>
+    <package name="thunar-lang"/>
+    <package name="thunar-plugin-archive"/>
+    <package name="thunar-plugin-archive-lang"/>
+    <package name="thunar-volman"/>
+    <package name="thunar-volman-lang"/>
+    <package name="tigervnc"/>
+    <package name="timezone"/>
+    <package name="tumbler"/>
+    <package name="udisks2"/>
+    <package name="upower"/>
+    <package name="vim"/>
+    <package name="vim-data"/>
+    <package name="virtualbox-guest-tools"/>
+    <package name="virtualbox-guest-x11"/>
+    <package name="x11-tools"/>
+    <package name="xdg-user-dirs"/>
+    <package name="xdg-user-dirs-gtk"/>
+    <package name="xfce4-dict"/>
+    <package name="xfce4-dict-lang"/>
+    <package name="xfce4-notifyd"/>
+    <package name="xfce4-notifyd-branding-openSUSE"/>
+    <package name="xfce4-notifyd-lang"/>
+    <package name="xfce4-panel"/>
+    <package name="xfce4-panel-branding-openSUSE"/>
+    <package name="xfce4-panel-lang"/>
+    <package name="xfce4-panel-plugin-power-manager"/>
+    <package name="xfce4-panel-plugin-pulseaudio"/>
+    <package name="xfce4-panel-plugin-pulseaudio-lang"/>
+    <package name="xfce4-panel-plugin-whiskermenu"/>
+    <package name="xfce4-panel-plugin-whiskermenu-lang"/>
+    <package name="xfce4-panel-plugin-xkb"/>
+    <package name="xfce4-panel-plugin-xkb-lang"/>
+    <package name="xfce4-power-manager-branding-openSUSE"/>
+    <package name="xfce4-screensaver"/>
+    <package name="xfce4-screenshooter"/>
+    <package name="xfce4-screenshooter-lang"/>
+    <package name="xfce4-session"/>
+    <package name="xfce4-session-branding-openSUSE"/>
+    <package name="xfce4-session-lang"/>
+    <package name="xfce4-settings"/>
+    <package name="xfce4-settings-branding-openSUSE"/>
+    <package name="xfce4-settings-lang"/>
+    <!--package name="xfce4-splash-branding-openSUSE"/-->
+    <package name="xfce4-taskmanager"/>
+    <package name="xfce4-taskmanager-lang"/>
+    <package name="xfce4-terminal"/>
+    <package name="xfce4-terminal-lang"/>
+    <package name="xfdesktop-branding-openSUSE"/>
+    <package name="xfwm4-branding-openSUSE"/>
+    <package name="xfsdump"/>
+    <package name="xfsprogs"/>
+    <package name="xorg-x11"/>
+    <package name="xorg-x11-driver-input"/>
+    <package name="xorg-x11-driver-video"/>
+    <package name="xrandr"/>
+    <package name="xreader"/>
+    <package name="xreader-lang"/>
+    <!--package name="xscreensaver"/-->
+    <package name="yast2-control-center-qt"/>
+    <package name="yast2-qt-branding-openSUSE"/> <!-- branding for the installer -->
+    <package name="yast2-trans-ru"/>
+    <package name="yast2-x11"/>
+    <package name="yelp"/>
+    <package name="yelp-lang"/>
+    <package name="zip"/>
+  </packages>
+  <packages type="bootstrap">
+    <package name="branding-openSUSE"/>
+    <package name="filesystem"/>
+    <package name="openSUSE-release"/>
+    <package name="openSUSE-release-livecd-x11"/>
+    <package name="virtualbox-kmp-default"/>
+  </packages>
+  <packages type="delete">
+    <package name="elementary-xfce-icon-theme"/>
+  </packages>
+  <!--repository type="rpm-md">
+    <source path="obsrepositories:/"/>
+  </repository-->
+  <repository type="rpm-md" priority="3">
+    <source path="obs://openSUSE:Leap:15.2/standard/"/>
+  </repository>
+  <repository type="rpm-md" priority="2">
+    <source path="obs://openSUSE:Leap:15.2:Update/standard/"/>
+  </repository>
+  <!--repository type="rpm-md" priority="1">
+    <source path="obs://home:AndnoVember:XFCE/openSUSE_Leap_15.2/"/>
+  </repository-->
+</image>
