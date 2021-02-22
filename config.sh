@@ -68,9 +68,9 @@ rm -rf /lib/firmware/{liquidio,netronome}
 
 # Remove some large locales to save space
 #rm -rf /usr/share/locale/{ca,cs,da,de,es,fr,it,ja,nl,pl,pt_BR,sv,uk,vi,zh_CN}
-find /usr/share/locale/* -maxdepth 0 -type d -not -name 'ru' -not -name 'ru_RU' | xargs rm -rf
-find /usr/share/help/* -maxdepth 0 -type d -not -name 'C' -not -name 'ru' -not -name 'ru_RU' | xargs rm -rf
-find /usr/share/gnome/help/*/* -maxdepth 0 -type d -not -name 'C' -not -name 'ru' -not -name 'ru_RU' | xargs rm -rf
+find /usr/share/locale/* -maxdepth 0 -type d -not -name 'fr' -not -name 'fr_FR' | xargs rm -rf
+find /usr/share/help/* -maxdepth 0 -type d -not -name 'C' -not -name 'fr' -not -name 'fr_FR' | xargs rm -rf
+find /usr/share/gnome/help/*/* -maxdepth 0 -type d -not -name 'C' -not -name 'fr' -not -name 'fr_FR' | xargs rm -rf
 
 # Remove duplicate licenses
 _target="";
@@ -130,11 +130,15 @@ chkstat --system --set
 
 ln -s /usr/lib/systemd/system/runlevel5.target /etc/systemd/system/default.target
 baseUpdateSysConfig /etc/sysconfig/displaymanager DISPLAYMANAGER_AUTOLOGIN $_USER
-baseUpdateSysConfig /etc/sysconfig/keyboard KEYTABLE us.map.gz
-baseUpdateSysConfig /etc/sysconfig/keyboard YAST_KEYBOARD "english-us,pc104"
+baseUpdateSysConfig /etc/sysconfig/keyboard KEYTABLE fr.map.gz
+baseUpdateSysConfig /etc/sysconfig/keyboard YAST_KEYBOARD "french,pc104"
 baseUpdateSysConfig /etc/sysconfig/keyboard COMPOSETABLE "clear latin1.add"
 
-baseUpdateSysConfig /etc/sysconfig/language RC_LANG ""
+baseUpdateSysConfig /etc/sysconfig/language RC_LANG "fr_FR.UTF-8"
+baseUpdateSysConfig /etc/sysconfig/language INSTALLED_LANGUAGES "fr_FR"
+echo "Europe/Paris" > /etc/timezone
+sed -i 's/2.opensuse.pool.ntp.org/pool.ntp.br/g' /etc/chrony.conf
+echo "fr_FR" > /var/lib/zypp/RequestedLocales
 
 baseUpdateSysConfig /etc/sysconfig/console CONSOLE_FONT "eurlatgr.psfu"
 baseUpdateSysConfig /etc/sysconfig/console CONSOLE_SCREENMAP trivial
