@@ -151,6 +151,14 @@ echo -e '\nXCURSOR_THEME=Adwaita' >> /etc/environment
 baseUpdateSysConfig /etc/sysconfig/displaymanager DISPLAYMANAGER lightdm
 baseUpdateSysConfig /etc/sysconfig/windowmanager DEFAULT_WM xfce
 
+
+if [ -f /etc/default/keyboard ]; then
+cat > /etc/default/keyboard <<-EOF
+XKBMODEL=pc104
+XKBLAYOUT=fr
+EOF
+fi
+
 #Disable journal write to disk in live mode, bug 950999
 echo "Storage=volatile" >> /etc/systemd/journald.conf
 
