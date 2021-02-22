@@ -16,7 +16,8 @@
     <bootsplash-theme>bgrt</bootsplash-theme>
     <packagemanager>zypper</packagemanager>
     <rpm-check-signatures>false</rpm-check-signatures>
-    <locale>en_US</locale>
+    <locale>fr_FR</locale>
+    <timezone>Europe/Paris</timezone>
     <rpm-excludedocs>false</rpm-excludedocs>
   </preferences>
   <preferences profiles="noEFI">
@@ -26,7 +27,8 @@
     <bootsplash-theme>bgrt</bootsplash-theme>
     <packagemanager>zypper</packagemanager>
     <rpm-check-signatures>false</rpm-check-signatures>
-    <locale>en_US</locale>
+    <locale>fr_FR</locale>
+    <timezone>Europe/Paris</timezone>
     <rpm-excludedocs>false</rpm-excludedocs>
   </preferences>
   <users>
@@ -42,11 +44,13 @@
     <package name="libxslt-tools"/> <!-- xsltproc needed by config.sh -->
     <package name="live-langset-data"/>
     <package name="live-net-installer"/>
+    <package name="calamares"/>
     <package name="memtest86+"/>
     <package name="pam"/>
     <package name="pam-config"/>
     <package name="patch"/>
     <package name="tar"/>
+    <package name="tar-lang"/>
     <package name="udev"/>
     <package name="yast2-add-on"/>
     <package name="yast2-ntp-client"/>
@@ -105,6 +109,7 @@
     <!--package name="file-roller"/>
     <package name="file-roller-lang"/-->
     <package name="firewalld"/>
+    <package name="firewalld-lang"/>
     <package name="fonts-config"/>
     <!--package name="galculator"/>
     <package name="galculator-lang"/-->
@@ -122,6 +127,7 @@
     <package name="grub2"/>
     <package name="grub2-x86_64-efi" arch="x86_64"/>
     <package name="gsynaptics"/>
+    <package name="gsynaptics-lang"/>
     <package name="gtk2-branding-openSUSE"/>
     <package name="gtk2-metatheme-greybird"/>
     <package name="gtk3-branding-openSUSE"/>
@@ -130,6 +136,7 @@
     <package name="gucharmap-lang"/>
     <package name="gvfs"/>
     <package name="gvfs-backends"/>
+    <package name="gvfs-lang"/>
     <package name="hexchat"/>
     <package name="hexchat-lang"/>
     <package name="iproute2"/>
@@ -142,6 +149,7 @@
     <package name="libyui-qt-pkg"/>
     <package name="lightdm"/>
     <package name="lightdm-gtk-greeter-branding-openSUSE"/>
+    <package name="lightdm-lang"/>
     <package name="lvm2"/>
     <package name="man"/>
     <package name="mate-calc"/>
@@ -177,8 +185,10 @@
     <package name="plymouth-dracut"/>
     <package name="polkit-default-privs"/>
     <package name="polkit-gnome"/>
+    <package name="polkit-gnome-lang"/>
     <package name="pptp"/>
     <package name="psmisc"/>
+    <package name="pulseaudio-lang"/>
     <package name="pulseaudio-module-x11"/>
     <package name="pulseaudio-utils"/>
     <package name="quota"/>
@@ -208,7 +218,9 @@
     <package name="timezone"/>
     <package name="tumbler"/>
     <package name="udisks2"/>
+    <package name="udisks2-lang"/>
     <package name="upower"/>
+    <package name="upower-lang"/>
     <package name="vim"/>
     <package name="vim-data"/>
     <package name="virtualbox-guest-tools"/>
@@ -259,6 +271,8 @@
     <!--package name="xscreensaver"/-->
     <package name="yast2-control-center-qt"/>
     <package name="yast2-qt-branding-openSUSE"/> <!-- branding for the installer -->
+    <package name="desktop-translations"/>
+    <package name="yast2-trans-fr"/>
     <package name="yast2-trans-ru"/>
     <package name="yast2-x11"/>
     <package name="yelp"/>
@@ -271,6 +285,7 @@
     <package name="openSUSE-release"/>
     <package name="openSUSE-release-livecd-x11"/>
     <package name="virtualbox-kmp-default"/>
+    <package name="release-notes-openSUSE"/>
   </packages>
   <packages type="delete">
     <package name="elementary-xfce-icon-theme"/>
